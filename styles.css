@@ -1,0 +1,47 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+}
+
+h2 {
+    font-size: 40px;
+    display: inline-block;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.winnerSect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
