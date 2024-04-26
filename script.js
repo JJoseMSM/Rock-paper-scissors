@@ -4,6 +4,7 @@ const scissorsBtn = document.querySelector('#scissors');
 const scorePlayer = document.querySelector('#scorePlayer');
 const scoreComputer = document.querySelector('#scoreComputer');
 const winnerP = document.querySelector('#winner');
+const finalScore = document.querySelector('#finalScore')
 
 const choices = ['rock', 'paper', 'scissors'];
 
@@ -16,47 +17,39 @@ computerScore = 0;
 
 function playRound(humanSelection, computerSelection) {
     if(humanSelection == computerSelection) {
-        const p = document.createElement('p');
-        p.innerText = `It's a tie you both chose ${humanSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `It's a tie you both chose ${humanSelection}`;
     } else if (humanSelection == 'rock' && computerSelection == 'scissors') {
         humanScore++;
-        const p = document.createElement('p');
-        p.innerText = `You win! ${humanSelection} beats ${computerSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `You win ${humanSelection} beats ${computerSelection}`;
         scorePlayer.textContent = humanScore
     } else if (humanSelection == 'paper' && computerSelection == 'rock') {
         humanScore++;
-        const p = document.createElement('p');
-        p.innerText = `You win! ${humanSelection} beats ${computerSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `You win ${humanSelection} beats ${computerSelection}`;
         scorePlayer.textContent = humanScore
     } else if (humanSelection == 'scissors' && computerSelection == 'paper') {
         humanScore++;
-        const p = document.createElement('p');
-        p.innerText = `You win! ${humanSelection} beats ${computerSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `You win ${humanSelection} beats ${computerSelection}`;
         scorePlayer.textContent = humanScore;
     } else if (computerSelection == 'rock' && humanSelection == 'scissors') {
         computerScore++;
-        const p = document.createElement('p');
-        p.innerText = `You lose ${computerSelection} beats ${humanSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `You lose ${computerSelection} beats ${humanSelection}`;
         scoreComputer.textContent = computerScore;
     } else if (computerSelection == 'paper' && humanSelection == 'rock') {
         computerScore++;
-        const p = document.createElement('p');
-        p.innerText = `You lose ${computerSelection} beats ${humanSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `You lose ${computerSelection} beats ${humanSelection}`;
         scoreComputer.textContent = computerScore;
     } else if (computerSelection == 'scissors' && humanSelection == 'paper') {
         computerScore++;
-        const p = document.createElement('p');
-        p.innerText = `You lose ${computerSelection} beats ${humanSelection}`;
-        winnerP.appendChild(p);
+        winnerP.textContent = `You lose ${computerSelection} beats ${humanSelection}`;
         scoreComputer.textContent = computerScore;
     }
+    if(humanScore >= 5) {
+        finalScore.textContent = 'Congratulations, you win!'
+    } else if(computerScore >= 5) {
+        finalScore.textContent = 'You lose, try again'
+    }
 }
+
 
 
 rockBtn.addEventListener('click', () => {
